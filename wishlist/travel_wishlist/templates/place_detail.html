@@ -7,6 +7,11 @@
     <p>You have visited {{ place.name }}</p>
 {% else %}
     <p>You have not visited {{ place.name }}</p>
+
+    <form action="{% url 'place_was_visited' place.pk %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="visited">Visited!</button>
+    </form>
 {% endif %}
 
 {% endblock %}
