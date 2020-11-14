@@ -14,4 +14,4 @@ class Place(models.Model):
     def __str__(self):
         photo_str = self.photo.url if self.photo else 'no photo'
         notes_str = self.notes[100:] if self.notes else 'no notes'
-        return f'{self.pk}: {self.name} visited? {self.visited} on {self.date_visited} Notes: {self.notes_str} \nPhoto {photo_str}'
+        return f'{self.pk}: {self.name} visited? {self.visited} on {self.date_visited} Notes: {notes_str} \nPhoto {photo_str}'
